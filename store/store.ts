@@ -26,6 +26,7 @@ interface SwapState {
   amount: string;
   fromAddress: string;
   toAddress: string;
+  receiveAmount: string;
   setSwapSecret: (secret: string) => void;
   setFromChain: (chain: Chain) => void;
   setToChain: (chain: Chain) => void;
@@ -34,6 +35,7 @@ interface SwapState {
   setAmount: (amount: string) => void;
   setFromAddress: (address: string) => void;
   setToAddress: (address: string) => void;
+  setReceiveAmount: (receiveAmount: string) => void;
 }
 
 // Chains and tokens arrays
@@ -278,6 +280,7 @@ export const useSwapStore = create<SwapState>((set) => ({
   amount: '',
   fromAddress: '',
   toAddress: '',
+  receiveAmount: '',
   setSwapSecret: (secret) => set({ swapSecret: secret }),
   setFromChain: (chain) =>
     set(() => ({
@@ -294,4 +297,5 @@ export const useSwapStore = create<SwapState>((set) => ({
   setAmount: (amount) => set({ amount }),
   setFromAddress: (address) => set({ fromAddress: address }),
   setToAddress: (address) => set({ toAddress: address }),
+  setReceiveAmount: (receiveAmount) => set({ receiveAmount }),
 }));
